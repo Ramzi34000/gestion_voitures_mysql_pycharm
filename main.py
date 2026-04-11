@@ -19,3 +19,11 @@ ajouter_voiture(v2)
 
 supprimer_voiture(1)
 print("Suppression OK")
+
+from crud_db import recuperer_voitures
+
+voitures = recuperer_voitures()
+
+print(f"Liste des voitures :")
+for v in voitures:
+    v.afficher_voiture()
