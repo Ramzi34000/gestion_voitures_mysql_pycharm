@@ -33,9 +33,15 @@ def ajouter_voiture(voiture):
         (voiture.marque, voiture.modele, voiture.annee, voiture.prix)
     )
 
+
+def supprimer_voiture(id):
+    conn = connecter_db()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM voiture WHERE id = %s", (id,))
+
     conn.commit()
     conn.close()
-
 
 
 
