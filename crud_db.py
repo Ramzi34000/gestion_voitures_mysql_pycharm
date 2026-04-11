@@ -33,6 +33,9 @@ def ajouter_voiture(voiture):
         (voiture.marque, voiture.modele, voiture.annee, voiture.prix)
     )
 
+    conn.commit()
+    conn.close()
+
 
 def supprimer_voiture(id):
     conn = connecter_db()

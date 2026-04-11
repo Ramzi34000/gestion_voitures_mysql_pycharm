@@ -1,15 +1,21 @@
 from voitures import Voiture
+from crud_db import ajouter_voiture, supprimer_voiture, connecter_db
 
-v = Voiture("Toyota", "Corolla", 2020, 20000)
-v.afficher_voiture()
 
-from crud_db import connecter_db
+v1 = Voiture("Toyota", "Corolla", 2020, 20000)
+ajouter_voiture(v1)
+
+print("Ajout OK")
+
 
 conn = connecter_db()
-print("connexion OKEY")
+print("Connexion OK")
 conn.close()
 
-from crud_db import ajouter_voiture
 
-v = Voiture("BMW", "M3CS", 2022, 80000)
-ajouter_voiture(v)
+v2 = Voiture("BMW", "M3CS", 2022, 80000)
+ajouter_voiture(v2)
+
+
+supprimer_voiture(1)
+print("Suppression OK")
